@@ -1,2 +1,22 @@
-.idea/*
+.DS_Store
+.env.local
+
+.idea
 .idea/dataSources.xml
+node_modules/
+package-lock.json
+
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/test/unit/coverage/
+myprogresspath.iml
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
