@@ -11,6 +11,14 @@ module.exports = {
                 type: Sequelize.STRING,
                 allowNull: false,
             },
+            owner: {
+                type: Sequelize.STRING,
+                allowNull: false,
+            },
+            complete: {
+                type: Sequelize.BOOLEAN,
+                defaultValue: false,
+            },
             createdAt: {
                 allowNull: false,
                 type: Sequelize.DATE,

@@ -11,9 +11,21 @@ module.exports = {
                 type: Sequelize.STRING,
                 allowNull: false,
             },
+            duration: {
+                type: Sequelize.INTEGER,
+                allowNull: false,
+            },
             complete: {
                 type: Sequelize.BOOLEAN,
                 defaultValue: false,
+            },
+            start_date: {
+                allowNull: false,
+                type: Sequelize.DATE,
+            },
+            end_date: {
+                allowNull: false,
+                type: Sequelize.DATE,
             },
             createdAt: {
                 allowNull: false,

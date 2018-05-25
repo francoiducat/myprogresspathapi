@@ -4,6 +4,15 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false,
         },
+        owner: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        complete: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
+        }
+
     });
 
     Mission.associate = (models) => {
