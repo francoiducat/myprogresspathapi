@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
     });
 
     Mission.associate = (models) => {
-        Mission.hasMany(models.TodoItem, {
+        Mission.hasMany(models.MissionItem, {
             foreignKey: 'missionId',
             as: 'missionItems',
         });
