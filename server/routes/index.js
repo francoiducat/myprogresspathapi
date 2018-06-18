@@ -1,5 +1,5 @@
 const missionsController = require('../controllers').missions;
-const services = require('../../services')
+const services = require('../services/services')
 const { Pool } = require("pg");
 
 const pool = new Pool({
@@ -10,7 +10,6 @@ const pool = new Pool({
 module.exports = (app) => {
 
     app.get('/api', (req, res) => {
-        console.log(req.body)
         res.status(200).send({
             message: 'Welcome to the Missions API!',
         })
@@ -18,10 +17,13 @@ module.exports = (app) => {
 
     app.get('/api/missions', (req, res) => {
         services.findAllMissions(pool)
-            .then(resultQuery => res.send(resultQuery.rows[0]))
+            .then(resultQuery => res.send(resultQuery.rows))
             .catch(e => console.log(e));
-
     });
 
-    app.post('/api/missions', missionsController.create);
+    app.post('/api/missions', (req, res) => {
+        services.postMission(req.body, pool)
+            .then(resultQuery => res.send(resultQuery))
+            .catch(e => console.log(e));
+    });
 };
