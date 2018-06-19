@@ -2,19 +2,24 @@
   "development": {
     "username": "postgres",
     "password": "postgres",
-    "database": "missions-dev",
+    "database": "missions-local",
     "host": "127.0.0.1",
     "port": 5432,
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "operatorAliases":false
   },
   "heroku": {
-    "use_env_variable": "DATABASE_URL"
+    "use_env_variable": "DATABASE_URL",
+    "operatorAliases":false
+
   },
   "production": {
     "username": "root",
     "password": null,
     "database": "database_production",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "operatorAliases":false
+
   }
 }

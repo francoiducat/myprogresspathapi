@@ -18,13 +18,13 @@ module.exports = (sequelize, DataTypes) => {
         },
         updated_at: {
             type: DataTypes.DATE,
-            allowNull: false,
         }
-
+    }, {
+        underscored:true
     });
 
     Mission.associate = (models) => {
-        Mission.hasMany(models.MissionItem, {
+        Mission.hasMany(models.mission_items, {
             foreignKey: 'mission_id',
             as: 'mission_items',
         });

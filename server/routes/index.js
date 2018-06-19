@@ -21,9 +21,11 @@ module.exports = (app) => {
             .catch(e => console.log(e));
     });
 
-    app.post('/api/missions', (req, res) => {
-        services.postMission(req.body, pool)
-            .then(resultQuery => res.send(resultQuery))
-            .catch(e => console.log(e));
-    });
+    app.post('/api/missions', missionsController.create);
+
+    // app.post('/api/missions', (req, res) => {
+    //     services.postMission(req.body, pool)
+    //         .then(resultQuery => res.send(resultQuery))
+    //         .catch(e => console.log(e));
+    // });
 };
