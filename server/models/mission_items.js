@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         complete: {
             type: DataTypes.BOOLEAN,
-            allowNull: false,
+            defaultValue: false,
         },
         start_date: {
             allowNull: false,
@@ -21,18 +21,20 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.DATE,
         },
         created_at: {
-            type: DataTypes.DATE,
             allowNull: false,
+            type: DataTypes.DATE,
         },
         updated_at: {
-            type: DataTypes.DATE,
             allowNull: false,
-        },
+            type: DataTypes.DATE,
+        }
+     }, {
+        underscored:true
     });
 
     MissionItem.associate = (models) => {
         MissionItem.belongsTo(models.missions, {
-            foreignKey: 'mission_id',
+            foreignKey: 'missions_id',
             onDelete: 'CASCADE',
         });
     };
