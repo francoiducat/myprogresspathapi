@@ -13,10 +13,11 @@ module.exports = (sequelize, DataTypes) => {
             defaultValue: false,
         },
         created_at: {
-            type: DataTypes.DATE,
             allowNull: false,
+            type: DataTypes.DATE,
         },
         updated_at: {
+            allowNull: false,
             type: DataTypes.DATE,
         }
     }, {
@@ -25,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
 
     Mission.associate = (models) => {
         Mission.hasMany(models.mission_items, {
-            foreignKey: 'mission_id',
+            foreignKey: 'missions_id',
             as: 'mission_items',
         });
     };

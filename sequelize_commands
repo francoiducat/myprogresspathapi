@@ -1,7 +1,7 @@
 
 // models creation
-sequelize model:create --name missions --attributes title:string,owner:string,complete:boolean,created_at:date,updated_at:date
-sequelize model:create --name mission_items --attributes content:string,duration:integer,complete:boolean,start_date:date,end_date::boolean,created_at:date,updated_at:date
+sequelize model:create --name missions --attributes title:string,owner:string,complete:boolean
+sequelize model:create --name mission_items --attributes content:string,duration:integer,complete:boolean,start_date:date,end_date::boolean
 
 
 // migration

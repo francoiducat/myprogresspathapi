@@ -20,6 +20,9 @@ module.exports = {
       start_date: {
         type: Sequelize.DATE
       },
+      end_date: {
+        type: Sequelize.DATE
+      },
       created_at: {
         type: Sequelize.DATE
       },

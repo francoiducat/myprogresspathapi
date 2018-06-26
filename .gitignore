@@ -20,3 +20,5 @@ myprogresspath.iml
 *.ntvs*
 *.njsproj
 *.sln
+
+server/config/config.json
