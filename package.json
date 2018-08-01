@@ -4,7 +4,7 @@
   "description": "my progress path api",
   "main": "index.js",
   "scripts": {
-    "start:dev": "nodemon ./bin/www",
+    "dev": "nodemon ./bin/www",
     "start": "node ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
