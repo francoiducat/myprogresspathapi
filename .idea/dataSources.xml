@@ -7,11 +7,11 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://ec2-54-75-227-92.eu-west-1.compute.amazonaws.com:5432/d13frsq9qiv8im</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="missions-local@localhost" uuid="c3ce4663-791c-4182-94eb-d9d489500338">
+    <data-source source="LOCAL" name="missions-dev@localhost" uuid="1da400eb-0529-4479-af36-94efe212a13e">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/missions-local</jdbc-url>
+      <jdbc-url>jdbc:postgresql://localhost:5432/missions-dev</jdbc-url>
     </data-source>
   </component>
 </project>

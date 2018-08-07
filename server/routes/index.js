@@ -10,27 +10,13 @@ module.exports = (app) => {
         })
     });
 
+    // MISSIONS
     app.get('/api/missions', missionsController.list);
-    app.get('/api/missions/:id', missionsController.retrieve);
-    app.get('/api/missionbyid/:id', missionsController.findMissionById);
-
+    app.get('/api/mission/:id', missionsController.retrieve);
     app.post('/api/missions', missionsController.create);
+
+    // MISSION ITEMS
     app.post('/api/missions/:id/items', missionItemsController.create);
 
-
-    /*
-    app.get('/api/missions', (req, res) => {
-
-        services.findAllMissions(pool)
-            .then(resultQuery => res.send(resultQuery.rows))
-            .catch(e => console.log(e));
-    })
-
-    app.post('/api/missions', (req, res) => {
-        services.postMission(req.body, pool)
-            .then(resultQuery => res.send(resultQuery))
-            .catch(e => console.log(e));
-    })
-    */
 
 }
