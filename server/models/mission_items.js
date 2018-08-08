@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const MissionItem = sequelize.define('mission_items', {
+    const mission_items = sequelize.define('mission_items', {
         content: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -32,12 +32,9 @@ module.exports = (sequelize, DataTypes) => {
         underscored:true
     });
 
-    MissionItem.associate = (models) => {
-        MissionItem.belongsTo(models.missions, {
-            foreignKey: 'missions_id',
-            onDelete: 'CASCADE',
-        });
+    mission_items.associate = (models) => {
+        mission_items.belongsTo(models.missions)
     };
 
-    return MissionItem;
+    return mission_items;
 };

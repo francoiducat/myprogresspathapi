@@ -1,4 +1,4 @@
-const Mission = require('../models').missions;
+const db = require('../models/index');
 const missionServices = require('../services/services.js')
 
 const { Pool } = require("pg")
@@ -34,7 +34,7 @@ module.exports = {
     },
 
     createSEQUELIZE (req, res) {
-        return Mission
+        return db.missions
             .create({
                 title: req.body.title,
                 owner: req.body.owner
@@ -44,7 +44,7 @@ module.exports = {
     },
 
     listSEQUELIZE (req, res) {
-        return Mission
+        return db.missions
             .all()
             .then(mission => {
                 res.status(201).send(mission)
@@ -55,7 +55,7 @@ module.exports = {
     },
 
     retrieveSEQUELIZE (req, res) {
-        return Mission
+        return db.missions
             .findById(req.params.id)
             .then(mission => {
                 res.status(201).send(mission)
