@@ -1,11 +1,6 @@
-const missionsController = require('../controllers').missions;
-const services = require('../services/services')
-const { Pool } = require("pg");
+const missionsController = require('../controllers').missions
+const missionItemsController = require('../controllers').mission_items
 
-const pool = new Pool({
-    connectionString: "postgres://postgres:postgres@127.0.0.1:5432/missions-dev",
-    ssl: false
-});
 
 module.exports = (app) => {
 
@@ -15,15 +10,13 @@ module.exports = (app) => {
         })
     });
 
-    app.get('/api/missions', (req, res) => {
-        services.findAllMissions(pool)
-            .then(resultQuery => res.send(resultQuery.rows))
-            .catch(e => console.log(e));
-    });
+    // MISSIONS
+    app.get('/api/missions', missionsController.list);
+    app.get('/api/mission/:id', missionsController.retrieve);
+    app.post('/api/missions', missionsController.create);
 
-    app.post('/api/missions', (req, res) => {
-        services.postMission(req.body, pool)
-            .then(resultQuery => res.send(resultQuery))
-            .catch(e => console.log(e));
-    });
-};
+    // MISSION ITEMS
+    app.post('/api/missions/:id/items', missionItemsController.create);
+
+
+}

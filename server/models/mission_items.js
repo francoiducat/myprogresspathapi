@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const MissionItem = sequelize.define('mission_items', {
+    const mission_items = sequelize.define('mission_items', {
         content: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         complete: {
             type: DataTypes.BOOLEAN,
-            allowNull: false,
+            defaultValue: false,
         },
         start_date: {
             allowNull: false,
@@ -21,21 +21,20 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.DATE,
         },
         created_at: {
-            type: DataTypes.DATE,
             allowNull: false,
+            type: DataTypes.DATE,
         },
         updated_at: {
-            type: DataTypes.DATE,
             allowNull: false,
-        },
+            type: DataTypes.DATE,
+        }
+     }, {
+        underscored:true
     });
 
-    MissionItem.associate = (models) => {
-        MissionItem.belongsTo(models.missions, {
-            foreignKey: 'mission_id',
-            onDelete: 'CASCADE',
-        });
+    mission_items.associate = (models) => {
+        mission_items.belongsTo(models.missions)
     };
 
-    return MissionItem;
+    return mission_items;
 };

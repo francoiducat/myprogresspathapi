@@ -7,5 +7,17 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://ec2-54-75-227-92.eu-west-1.compute.amazonaws.com:5432/d13frsq9qiv8im</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="missions-dev@localhost" uuid="1da400eb-0529-4479-af36-94efe212a13e">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/missions-dev</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="missions-dev-sequelize@localhost" uuid="493c8e66-1ae9-448b-984f-63677e169d7f">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/missions-dev-sequelize</jdbc-url>
+    </data-source>
   </component>
 </project>

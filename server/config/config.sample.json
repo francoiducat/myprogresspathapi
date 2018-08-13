@@ -1,16 +1,16 @@
 {
   "development": {
-    "username": "postgres",
-    "password": "postgres",
-    "database": "missions-dev-sequelize",
+    "username": "username",
+    "password": "password",
+    "database": "database",
     "host": "127.0.0.1",
     "port": 5432,
     "dialect": "postgres",
-    "operatorAliases": false
+    "operatorAliases":false
   },
   "heroku": {
     "use_env_variable": "DATABASE_URL",
-    "operatorAliases": false
+    "operatorAliases":false
 
   },
   "production": {
@@ -19,7 +19,7 @@
     "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "operatorAliases": false
+    "operatorAliases":false
 
   }
 }

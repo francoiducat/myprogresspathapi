@@ -1,11 +1,12 @@
+'use strict'
 module.exports = {
-    up: (queryInterface, Sequelize) =>
-        queryInterface.createTable('Missions', {
+    up: (queryInterface, Sequelize) => {
+        return queryInterface.createTable('missions', {
             id: {
                 allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
-                type: Sequelize.INTEGER,
+                type: Sequelize.INTEGER
             },
             title: {
                 type: Sequelize.STRING,
@@ -17,16 +18,19 @@ module.exports = {
             },
             complete: {
                 type: Sequelize.BOOLEAN,
-                defaultValue: false,
+                defaultValue: false
             },
-            createdAt: {
-                allowNull: false,
+            created_at: {
                 type: Sequelize.DATE,
+                allowNull: false
             },
-            updatedAt: {
-                allowNull: false,
+            updated_at: {
                 type: Sequelize.DATE,
-            },
-        }),
-    down: (queryInterface /* , Sequelize */) => queryInterface.dropTable('Missions'),
-};
+                allowNull: false
+            }
+        });
+    },
+    down: (queryInterface, Sequelize) => {
+        return queryInterface.dropTable('missions')
+    }
+}

@@ -1,1 +1,24 @@
+
+//database creation
+sequelize db:create
+
+// models creation
+sequelize model:create --underscored --name missions --attributes title:string,owner:string,complete:boolean
+sequelize model:create --underscored --name mission_items --attributes content:string,duration:integer,complete:boolean,start_date:date,end_date:date
+
+// migration
 sequelize db:migrate
+
+// Seed generation
+sequelize seed:generate --name missions
+
+// Load Seed
+sequelize db:seed:all
+
+
+
+// For a new dev in READ ME :-)
+
+sequelize db:create
+sequelize db:migrate
+sequelize db:seed:all

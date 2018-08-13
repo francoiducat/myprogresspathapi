@@ -1,15 +1,17 @@
+'use strict'
 module.exports = {
-    up: (queryInterface, Sequelize) =>
-        queryInterface.createTable('MissionItems', {
+    up: (queryInterface, Sequelize) => {
+        return queryInterface.createTable('mission_items', {
             id: {
                 allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
-                type: Sequelize.INTEGER,
+                type: Sequelize.INTEGER
             },
             content: {
                 type: Sequelize.STRING,
                 allowNull: false,
+
             },
             duration: {
                 type: Sequelize.INTEGER,
@@ -17,34 +19,34 @@ module.exports = {
             },
             complete: {
                 type: Sequelize.BOOLEAN,
-                defaultValue: false,
+                defaultValue: false
             },
             start_date: {
-                allowNull: false,
                 type: Sequelize.DATE,
+                allowNull: false
             },
             end_date: {
-                allowNull: false,
                 type: Sequelize.DATE,
+                allowNull: false
             },
-            createdAt: {
-                allowNull: false,
+            created_at: {
                 type: Sequelize.DATE,
+                allowNull: false
             },
-            updatedAt: {
-                allowNull: false,
+            updated_at: {
                 type: Sequelize.DATE,
+                allowNull: false
             },
-            missionId: {
+            mission_id: {
                 type: Sequelize.INTEGER,
-                onDelete: 'CASCADE',
                 references: {
-                    model: 'Missions',
-                    key: 'id',
-                    as: 'missionId',
-                },
-            },
-        }),
-    down: (queryInterface /* , Sequelize */) =>
-        queryInterface.dropTable('MissionItems'),
-};
+                    model: 'missions',
+                    key: 'id'
+                }
+            }
+        });
+    },
+    down: (queryInterface, Sequelize) => {
+        return queryInterface.dropTable('mission_items')
+    }
+}
