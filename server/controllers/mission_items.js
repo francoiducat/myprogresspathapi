@@ -33,5 +33,16 @@ module.exports = {
         return missionServices.createMissionItem(missionItem, pool)
             .then(missionItemId => res.status(201).send(missionItemId))
             .catch(e => res.send(e))
+    },
+    list (req, res) {
+        return missionServices.findAllMissionItemsByMissionId(req.params.id, pool)
+            .then(missionItems => res.status(201).send(missionItems))
+            .catch(e => res.status(400).send(e))
+    },
+    retrieve (req, res) {
+        return missionServices.retrieveMissionItemById(req.params.id, pool)
+            .then(missionItem => res.status(201).send(missionItem))
+            .catch(e => res.status(400).send(e))
     }
+
 }

@@ -12,7 +12,7 @@ module.exports = {
 
     list (req, res){
       return missionServices.findAllMissions(pool)
-          .then(mission => res.status(201).send(mission))
+          .then(missions => res.status(201).send(missions))
           .catch(e => res.status(400).send(e))
     },
 
