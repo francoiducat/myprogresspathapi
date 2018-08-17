@@ -4,17 +4,20 @@ sequelize db:create
 
 // models creation
 sequelize model:create --underscored --name missions --attributes title:string,owner:string,complete:boolean
-sequelize model:create --underscored --name mission_items --attributes content:string,duration:integer,complete:boolean,start_date:date,end_date:date
+sequelize model:create --underscored --name mission_items --attributes content:string,duration:DECIMAL,complete:boolean,start_date:date,end_date:date
 
 // migration
 sequelize db:migrate
 
 // Seed generation
 sequelize seed:generate --name missions
+sequelize seed:generate --name mission_items
 
-// Load Seed
+// Load All Seed
 sequelize db:seed:all
 
+// Load specific seed
+sequelize db:seed --seed 20180817103645-mission_items.js
 
 
 // For a new dev in READ ME :-)
