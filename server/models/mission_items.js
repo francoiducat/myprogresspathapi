@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
         },
         duration: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.DECIMAL,
             allowNull: false,
         },
         complete: {
