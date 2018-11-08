@@ -6,20 +6,50 @@ Time Tracker App built with EXPRESS, SEQUELIZE, POSTGRESQL.
 My progress path API enables you to track time you spend on different tasks. Each task serving a mission. 
 
 
-## Database 
+## How to run the app ?
 
-Data is handled with sequelize tool.
+Follow these steps to run the API locally
 
-Here are the 3 main steps to do with sequelize when it comes to launch an app locally :
+### 1. Setup config file
+
+Create file ```server/config/config.json```  based on the file ```config.sample.json```
+
+### 2. Setup environement variables
+
+Export environment variables.
+
+Locally it is possible to store them in a file ```.env.local```
+
+ 
+
+### 3. Setup database
+
+Run these commands (Data is handled with sequelize tool):
+
+>Create database
 
 ```sequelize db:create```
 
+>Create tables (based on migration files)
+
 ```sequelize db:migrate```
+
+>Load dummy data locally (optional)
 
 ```sequelize db:seed:all```
 
+### Install dependencies
+
+```npm install```
+
+### Run the app
+
+```npm run dev```
+
+## Database & sequelize, how it works ?
 
 ### Database creation
+
 ```sequelize db:create```
 
 ### Models creation
@@ -32,12 +62,19 @@ missions_items :
 
 ```sequelize model:create --underscored --name mission_items --attributes content:string,duration:integer,complete:boolean,start_date:date,end_date:date```
 
+After these 2 commands, models are refactored to ES6 manually.
 
 ### Database migration
+
+Running migration files will create tables in database.
+Execute this command to do it:
+
 ```sequelize db:migrate```
 
 
 ### Seeds generation
+
+
 
 missions :
 
