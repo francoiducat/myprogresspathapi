@@ -4,7 +4,7 @@ const missionServices = require('../services/services.js')
 const { Pool } = require("pg")
 
 const pool = new Pool({
-    connectionString: "postgres://postgres:postgres@127.0.0.1:5432/missions-dev",
+    connectionString: process.env.DATABASE_URL,
     ssl: false
 });
 

@@ -1,5 +1,6 @@
 .DS_Store
 .env.local
+.env.dev
 
 .idea
 .idea/dataSources.xml
@@ -21,3 +22,4 @@ myprogresspath.iml
 *.sln
 
 server/config/config.json
+
