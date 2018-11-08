@@ -1,5 +1,9 @@
 # myprogresspathapi
-my progress path api enables you to track time you spend on different tasks. Each task serving a mission.
+
+Time Tracker App built with EXPRESS, SEQUELIZE, POSTGRESQL.
+
+
+My progress path API enables you to track time you spend on different tasks. Each task serving a mission. 
 
 
 ## Database 
