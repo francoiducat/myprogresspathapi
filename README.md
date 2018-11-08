@@ -26,13 +26,21 @@ Locally it is possible to store them in a file ```.env.local```
 
 Run these commands (Data is handled with sequelize tool):
 
+Install sequelize :
+
+```npm install -g sequelize-cli```
+
 >Create database
 
 ```sequelize db:create```
 
+This command will load the config.json file in the background.
+
 >Create tables (based on migration files)
 
 ```sequelize db:migrate```
+
+/!\ This command can fail if there are more than one migration file for the same table. 
 
 >Load dummy data locally (optional)
 

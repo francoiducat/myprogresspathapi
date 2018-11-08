@@ -19,5 +19,11 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/missions-dev-sequelize</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="missions-dev-test-howto@localhost" uuid="e3aec727-524d-417a-92f9-818f86aa4c39">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/missions-dev-test-howto</jdbc-url>
+    </data-source>
   </component>
 </project>
