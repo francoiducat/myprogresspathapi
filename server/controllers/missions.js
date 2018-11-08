@@ -12,13 +12,13 @@ module.exports = {
 
     list (req, res){
       return missionServices.findAllMissions(pool)
-          .then(missions => res.status(201).send(missions))
+          .then(missions => res.status(200).send(missions))
           .catch(e => res.status(400).send(e))
     },
 
     retrieve (req, res) {
         return missionServices.findMissionById(req.params.id,pool)
-            .then(mission => res.status(201).send(mission))
+            .then(mission => res.status(200).send(mission))
             .catch(e => res.status(400).send(e))
     },
 
@@ -47,7 +47,7 @@ module.exports = {
         return db.missions
             .all()
             .then(mission => {
-                res.status(201).send(mission)
+                res.status(200).send(mission)
             })
             .catch(error => {
                 res.status(400).send(error)
@@ -58,7 +58,7 @@ module.exports = {
         return db.missions
             .findById(req.params.id)
             .then(mission => {
-                res.status(201).send(mission)
+                res.status(200).send(mission)
             })
             .catch(error => {
                 res.status(400).send(error)

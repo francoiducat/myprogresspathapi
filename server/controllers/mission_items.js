@@ -36,12 +36,12 @@ module.exports = {
     },
     list (req, res) {
         return missionServices.findAllMissionItemsByMissionId(req.params.id, pool)
-            .then(missionItems => res.status(201).send(missionItems))
+            .then(missionItems => res.status(200).send(missionItems))
             .catch(e => res.status(400).send(e))
     },
     retrieve (req, res) {
         return missionServices.retrieveMissionItemById(req.params.id, pool)
-            .then(missionItem => res.status(201).send(missionItem))
+            .then(missionItem => res.status(200).send(missionItem))
             .catch(e => res.status(400).send(e))
     }
 
