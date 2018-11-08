@@ -19,7 +19,6 @@ sequelize db:seed:all
 // Load specific seed
 sequelize db:seed --seed 20180817103645-mission_items.js
 
-
 // For a new dev in READ ME :-)
 
 sequelize db:create
